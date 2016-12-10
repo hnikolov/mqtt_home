@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Home MQTT</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Not found Error! -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+  
+  <!-- Google Fonts embed code instead of the link above -->
+  <!--
+  <script type="text/javascript">
+    (function() {
+      var link_element = document.createElement("link"),
+          s = document.getElementsByTagName("script")[0];
+      if (window.location.protocol !== "http:" && window.location.protocol !== "https:") {
+          link_element.href = "http:";
+      }
+      link_element.href += "//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900";
+      link_element.rel = "stylesheet";
+      link_element.type = "text/css";
+      s.parentNode.insertBefore(link_element, s);
+    })();
+  </script>
+  -->
+  
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+ 
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Source Paho MQTT Client 
+  -------------------------------------------------- -->
+  <script src="./js/mqttws31-min.js"> </script>
+
+  <!-- Canvas JS 
+  -------------------------------------------------- -->
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js">  </script>
+
+  <!-- Utility Javascript
+  -------------------------------------------------- -->
+  <script src="js/utility.js"> </script>
+  
+</head>
+
+<body onload="javascript:onMainLoad()">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="section values">
+    <div class="container">  
+      <div class="row">
+        <div class="three columns value">
+          <h2 class="value-multiplier" id="row_t">23.45 &deg;C</h2>
+          <p class="value-description" id="upd_t">10:23:06 - 123</p>
+        </div>
+        <div class="three columns value">
+          <h2 class="value-multiplier" id="row_e">0.97 kw/h</h2>
+          <p class="value-description" id="upd_e">10:23:06 - 123</p>
+        </div>
+        <div class="three columns value">
+          <h2 class="value-multiplier" id="row_w">662 lit</h2>
+          <p class="value-description" id="upd_w">9:12:33 - 870</p>
+        </div>
+        <div class="three columns value">
+          <h2 class="value-multiplier" id="row_g">1.34 m&sup3;</h2>
+          <p class="value-description" id="upd_g">11:53:26 - 624</p>
+        </div>
+      </div>
+      
+      <div class="raw" id="chartContainer_et" style="height:200px; width: 100%;"></div>
+
+      <div class="raw"> 
+        <p>&nbsp;
+        <p align="right" id="connectionStatus"> Status Bar 
+      </div>
+    </div>
+  </div>
+
+  <div class="section get-help">
+    <div class="container">  
+      <!-- <div class="raw" id="chartContainer_et" style="height:200px; width: 100%;"></div> -->
+      <!-- <p> -->
+      <div class="raw" id="chartContainer_st" style="height:300px; width: 100%;"></div>
+      <p>
+      <div class="raw" id="chartContainer_ste" style="height:300px; width: 100%;"></div>
+      <p>
+      <div class="raw" id="chartContainer_sy" style="height:300px; width: 100%;"></div>
+      <p>
+      <div class="raw" id="chartContainer_sye" style="height:300px; width: 100%;"></div>
+    </div>
+  </div>
+
+  <div class="section values">
+  </div>
+
+  <div class="section get-help">
+    <div class="container">
+      <iframe id="forecast_embed" type="text/html" frameborder="0" height="220" width="100%" src="http://forecast.io/embed/#lat=52.182267&lon=4.429516&name=Valkenburg (ZH)&color=#FFA500&text-color=#666666&units=si"> </iframe>
+    </div>
+  </div>
+
+  
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
